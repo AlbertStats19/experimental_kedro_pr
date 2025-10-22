@@ -1,0 +1,22 @@
+# -------- CAPA FEATURE
+homologate_region_model:
+  type: pickle.PickleDataset
+  filepath: s3://iris-mlops-kedro-data/data_mlops/04_feature/homologate_region_model.pickle
+
+feature_selected_list:
+  type: pandas.ParquetDataset
+  filepath: s3://iris-mlops-kedro-data/data_mlops/04_feature/feature_selected_list.parquet
+
+# ------ CAPA MODEL SELECTION
+info_save_select:
+  type: pickle.PickleDataset
+  filepath: s3://iris-mlops-kedro-data/data_mlops/07-model_selection/info_save_select.pickle
+
+# ----- BACKTESTING
+data_backtesting:
+  type: pickle.PickleDataset
+  filepath: s3://iris-mlops-kedro-data/data_mlops/09-backtesting/save_backtesting_${runtime_params:fecha_ejecucion}_prueba1.pickle
+
+insumo_modelo_360:
+  type: pickle.PickleDataset
+  filepath: s3://iris-mlops-kedro-data/data_mlops/09-backtesting/insumo_modelo_360_${runtime_params:fecha_ejecucion}_prueba1.pickle
